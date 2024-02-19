@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { useAuthStore, useAlertStore } from "@/stores";
 import { Home } from "@/views";
+import monitoringRoutes from "@/router/monitoring.routes";
 import canaryRoutes from "./canary.routes"
 import helpRoutes from "./help.routes"
 import testRoutes from "./test.routes"
@@ -9,6 +10,7 @@ export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     { path: "/", component: Home },
+    {...monitoringRoutes},
     {...canaryRoutes},
     {...helpRoutes},
     {...testRoutes},
